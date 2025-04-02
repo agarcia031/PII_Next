@@ -13,9 +13,9 @@ const Slider: React.FC<SliderProps> = ({ value, onChange, horizontal}) => {
         <div className=" flex flex-col items-center">
         <input
             type="range"
-            min="0"
-            max="20"
-            step="0.1"
+            min="20"
+            max="2000"
+            step="1"
             value={value}
             onChange={(e) => onChange(Number(e.target.value))}
             className="appearance-none bg-gray-300 h-1 rounded-lg"
@@ -28,8 +28,8 @@ const Slider: React.FC<SliderProps> = ({ value, onChange, horizontal}) => {
             <input
                 type="range"
                 min="0"
-                max="10"
-                step="1"
+                max="1"
+                step="0.01"
                 value={value}
                 onChange={(e) => onChange(Number(e.target.value))}
                 className="rotate-[-90deg] bg-gray-300 rounded-lg h-64"

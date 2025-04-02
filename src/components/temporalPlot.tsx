@@ -23,7 +23,7 @@ const TemporalPlot = ({ signal, xValues }: { signal: number[], xValues: number[]
             zeroline: false,
           }, 
           yaxis: { title: {text:'Amplitude'}, 
-            range: [-10, 10],
+            range: [-1.2, 1.2],
             showgrid: true,
             zeroline: false,
            }, // 🔥 Fixe l'axe Y à une plage cohérente

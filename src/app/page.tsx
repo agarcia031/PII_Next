@@ -7,12 +7,13 @@ import SinusControls from '@/components/sinusControls';
 import { useState } from 'react';
 import Link from 'next/link';  
 import './globals.css';
+import SoundPlayer from '@/components/SoundPlayer';
 
 export default function Home() {
 
   // Création d'un signal sinusoïdal
-  const [frequence, setFrequence] = useState(1); // État initial des fréquences
-  const [amplitude, setAmplitude] = useState(1);
+  const [frequence, setFrequence] = useState(440); // Fréquences en Hz
+  const [amplitude, setAmplitude] = useState(0.5);
   const numEch = 8192; // Nombre d'échantillon doit être une puissance de 2 pour la fft
   const step = 10 / numEch; // Calcul du pas pour couvrir de 0 à 10
   const xValues = Array.from({ length: numEch }, (_, i) => i * step); // axe des absices pour le plot temporel
@@ -24,6 +25,9 @@ export default function Home() {
 
       <Slider value={frequence} onChange={setFrequence} horizontal={true}/>
       <Slider  value={amplitude} onChange={setAmplitude} horizontal={false}/>
+
+      {/* Bouton pour jouer le son */}
+      <SoundPlayer frequence={frequence} amplitude={amplitude} />
 
       <TemporalPlot signal={signal} xValues={xValues}/>
       <FFTPlot signal={signal}/>
