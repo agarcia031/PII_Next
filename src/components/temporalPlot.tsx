@@ -18,8 +18,8 @@ const TemporalPlot = ({ signal, xValues }: { signal: number[], xValues: number[]
       ]}
       layout={
         { title: 'Signal temporel', 
-          xaxis: { title: {text:'Temps (millisecondes)'},
-          range: [0, 200],
+          xaxis: { title: {text:'Temps (secondes)'},
+          range: [0, 0.2],
           showgrid: true,
           zeroline: false,
           }, 
