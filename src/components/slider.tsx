@@ -14,7 +14,7 @@ const Slider: React.FC<SliderProps> = ({ value, onChange, horizontal}) => {
         <input
             type="range"
             min="20"
-            max="2000"
+            max="1200"
             step="1"
             value={value}
             onChange={(e) => onChange(Number(e.target.value))}

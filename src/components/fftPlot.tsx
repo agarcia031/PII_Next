@@ -9,13 +9,13 @@ const FFTPlot = ({ signal }: { signal: number[] }) => {
 
   useEffect(() => {
     // Calcul de la transformée de Fourier
-    const { freqs, magnitudes } = calculateFFT(signal);
+    const { freqs, amplitude } = calculateFFT(signal);
 
     // Mettre à jour l'état avec les données à afficher
     setData({
       fft: {
         x: freqs,
-        y: magnitudes,
+        y: amplitude,
         type: 'scatter',
         mode: 'lines',
         name: 'Transformée de Fourier',
@@ -34,13 +34,13 @@ const FFTPlot = ({ signal }: { signal: number[] }) => {
           title: { text: 'Fréquence (Hz)' },
           showgrid: true,
           zeroline: false,
-          range: [-40, 40],
+          range: [0, 1500],
         },
         yaxis: {
-          title: { text: 'Magnitude' },
+          title: { text: 'Amplitude' },
           showgrid: true,
           zeroline: false,
-          range: [0, 1000],
+          range: [0, 1],
         },
         showlegend: true,
         margin: { t: 50, b: 50, l: 50, r: 50 },
